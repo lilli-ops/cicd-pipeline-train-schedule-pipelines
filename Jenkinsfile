@@ -3,20 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               echo 'running build automation'
-          sh './gradlew build --no deamon'   
+               echo 'wie gehts dir freddy ?'
+          sh './gradlew build --no-deamon'   
             archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
-      {
-            steps {
-                //
-            }
-        }
         stage('Deploy') {
-            steps {
-                //
-            }
+        
         }
     }
 }
