@@ -1,15 +1,12 @@
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-               echo 'wie gehts dir freddy ?'
-          sh './gradlew build --no-deamon'   
-            archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-            }
-        }
-        stage('Deploy') {
-        
-        }
+pipeline { 
+  agent any
+  stages {
+    stage("Build") {
+      steps {
+        echo "Running build automation"
+        sh "./gradlew build --no-daemon"
+        archiveArtifacts artifacts: "dist/trainSchedule.zip"
+      }
     }
+  }
 }
